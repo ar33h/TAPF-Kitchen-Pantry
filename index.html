@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kitchen Pantry | Home</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/snackbar.css" />
+    <link rel="icon" type="image/jpg" href="./img/hot_food.png" />
+  </head>
+  <body>
+    <div class="top">
+      <img src="./img/aplogo.png" class="image" />
+      <p class="topheading">Kitchen Pantry Management System</p>
+      <form action="login.html">
+        <input type="submit" value="Logout" class="btn btn-danger"
+        style="margin-left: 90%; margin-top: 2%; width: 100px;">
+      </form>
+    </div>
+    <div class="page">
+      <!-- <div class="page-heading">
+        <span> TAPF Kitchen Pantry Management System </span>
+      </div> -->
+      <div class="card special-form-card">
+        <div class="upper-card">
+          <div class="card-content">
+            <div class="card-top">
+              <span id="insert-heading"
+              >Item Name:</span>
+              <span id="edit-heading">Update Item:</span>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="nameField"
+                placeholder="Enter item name"
+              />
+            </div>
+            <div class="card-heading">
+              <span id="insert-heading"
+              style="padding: 20px;">Quantity:</span>
+            </div>
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                id="ageField"
+                placeholder="Enter quantity"
+              />
+
+            </div> 
+            <div class="form-actions">
+              <button
+                id="insert-btn"
+                type="submit"
+                onclick="createNewRecord()"
+                class="btn btn-success"
+                style="margin-left: 30px;"
+              >
+                Submit
+              </button>
+              
+             
+            </div>
+            <div class="form-actions">
+              <button
+              id="edit-btn"
+              type="submit"
+              class="btn btn-info"
+              onclick="updateButtonPress()"
+              style="margin-left: 30px;"
+              
+              
+            >
+              Update
+            </button>
+
+            </div>
+            <div class="form-actions">
+              <button
+              id="edit-cnl-btn"
+              type="submit"
+              class="btn btn-danger margin-left-2x"
+              onclick="updateCancelButton()"
+              
+            >
+              Cancel
+            </button>
+
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <div class="page-contant">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-heading">
+              Kitchen Items
+            </div>
+            <div class="card-content">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">S.No.</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Date </th>
+                    <th scope="col">Time</th>
+                    
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                    
+                  </tr>
+                </thead>
+                <tbody id="generatedTableData"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="snackbar"></div>
+  
+    <!-- delete-model -->
+    <div
+      class="modal fade"
+      id="deleteModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="deleteModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLongTitle">Delete Record</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Do you want to delete record from the table.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+              id="deleteModelBtn"
+            >
+              Delete
+            </button>
+            <button
+              id="deleteCnlModelBtn"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- /delete-model -->
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/popper.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
